@@ -25,7 +25,7 @@ import src.solver.*;
 public class SimulatedAnnealingAlgo extends EvaluationBaseAlgorithm {
     
     private ReglePotentielle [] m_tReglesPotentiellesPrecedentes = null;
-    private float m_fTemperature = 0.0f;
+    private float m_fTemperature = 0.000f;
     private int m_iNombreEtapes = 0;
     
     
@@ -57,7 +57,7 @@ public class SimulatedAnnealingAlgo extends EvaluationBaseAlgorithm {
             m_tReglesPotentiellesPrecedentes[iIndiceReglePotentielle].Copier( m_tReglesPotentielles[iIndiceReglePotentielle] ); 
         }
         
-        m_fTemperature = 1.0f;
+        m_fTemperature = 1.000f;
     }
         
     
@@ -72,7 +72,7 @@ public class SimulatedAnnealingAlgo extends EvaluationBaseAlgorithm {
         int iIndiceIntervalle = 0;
         DataColumn colonneDonnees = null;
         ReglePotentielle reglePotentielle = null;
-        float fAmplitude = 0.0f;
+        float fAmplitude = 0.000f;
         
         for (iIndiceReglePotentielle=0; iIndiceReglePotentielle<m_iNombreReglesPotentielles; iIndiceReglePotentielle++) {
 
@@ -99,12 +99,12 @@ public class SimulatedAnnealingAlgo extends EvaluationBaseAlgorithm {
 
             if (reglePotentielle.m_iSupportRegle > (int)(m_fMinSupp*(float)iNombreValeursDomaine)) {
                 if (reglePotentielle.m_iSupportRegle > (int)(m_fMinConf*(float)reglePotentielle.m_iSupportCond))
-                    fAmplitude = 0.2f * (1.0f - ( ((float)Math.abs(reglePotentielle.m_iSupportRegle - (int)(m_fMinConf*(float)reglePotentielle.m_iSupportCond))) / ((float)i) ));
+                    fAmplitude = 0.200f * (1.000f - ( ((float)Math.abs(reglePotentielle.m_iSupportRegle - (int)(m_fMinConf*(float)reglePotentielle.m_iSupportCond))) / ((float)i) ));
                 else
-                    fAmplitude = 0.2f + 0.8f * (1.0f - ((float)reglePotentielle.m_iSupportRegle) / ((float)m_iNombreTransactions) );
+                    fAmplitude = 0.200f + 0.800f * (1.000f - ((float)reglePotentielle.m_iSupportRegle) / ((float)m_iNombreTransactions) );
             }
             else
-                fAmplitude = 0.2f + 0.8f * (1.0f - ((float)reglePotentielle.m_iSupportRegle) / ((float)m_iNombreTransactions) );
+                fAmplitude = 0.200f + 0.800f * (1.000f - ((float)reglePotentielle.m_iSupportRegle) / ((float)m_iNombreTransactions) );
 
         
         
@@ -178,7 +178,7 @@ public class SimulatedAnnealingAlgo extends EvaluationBaseAlgorithm {
             
         }
         
-        m_fTemperature -= 1.0f / (float)m_iNombreEtapes;
+        m_fTemperature -= 1.000f / (float)m_iNombreEtapes;
     }
      
 }
