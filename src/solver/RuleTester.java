@@ -67,8 +67,8 @@ public class RuleTester extends Thread { //test rules
     private boolean m_bModeSpecialComptabilisationRegles = false;
     private int m_iNombreReglesComptabilisees = 0;
         
-    float m_fMinSupp = 0.0f;
-    float m_fMinConf = 0.0f;
+    float m_fMinSupp = 0.000f;
+    float m_fMinConf = 0.000f;
     int m_iNombreDisjonctionsGauche = 0;
     int m_iNombreDisjonctionsDroite = 0;
     

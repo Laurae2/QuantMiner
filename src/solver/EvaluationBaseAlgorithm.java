@@ -56,7 +56,7 @@ public abstract class EvaluationBaseAlgorithm {
         public float m_tIntervalleMax [] = null;   // Bornes maximales des 'm_iDimension' intervalles
         public int m_tIndiceMin [] = null;       // Indices des bornes min parmi l'ensemble des valeurs de l'attribut dans la BD
         public int m_tIndiceMax [] = null;       // Indices des bornes max parmi l'ensemble des valeurs de l'attribut dans la BD
-        public float m_fQualite = 0.0f;
+        public float m_fQualite = 0.000f;
         public int m_iSupportRegle = 0;
         public int m_iSupportCond = 0;
         public int m_iNombreTotalIntervalles = 0;
@@ -74,7 +74,7 @@ public abstract class EvaluationBaseAlgorithm {
             m_tIndiceMin = new int [m_iNombreTotalIntervalles];
             m_tIndiceMax = new int [m_iNombreTotalIntervalles];
 
-            m_fQualite = 0.0f;
+            m_fQualite = 0.000f;
             m_iSupportRegle = 0;
             m_iSupportCond = 0;
         }
@@ -139,10 +139,10 @@ public abstract class EvaluationBaseAlgorithm {
     protected ReglePotentielle m_derniereReglePotentielleValide = null; //last valid potential rule
     protected DatabaseAdmin m_gestionBD = null;
 
-    protected float m_fMinSupp = 0.0f;
-    protected float m_fMinConf = 0.0f;
-    protected float m_fMinSuppRegle = 0.0f; // Support minimal pour autoriser la r�gle (compl�te et sous sa premi�re forme sans disjonctions)
-    protected float m_fMinSuppDisjonction = 0.0f; // Support minimal d'un sous-r�gle pour etre incorpor�e dans la r�gle finale
+    protected float m_fMinSupp = 0.000f;
+    protected float m_fMinConf = 0.000f;
+    protected float m_fMinSuppRegle = 0.000f; // Support minimal pour autoriser la r�gle (compl�te et sous sa premi�re forme sans disjonctions)
+    protected float m_fMinSuppDisjonction = 0.000f; // Support minimal d'un sous-r�gle pour etre incorpor�e dans la r�gle finale
     
     protected int m_iNombreTransactions = 0;
 
@@ -198,8 +198,8 @@ public abstract class EvaluationBaseAlgorithm {
         m_iNombreReglesPotentielles = iNombreReglesPotentielles;
         m_gestionBD = gestionBD;
         
-        m_fMinSupp = 0.0f;
-        m_fMinConf = 0.0f;
+        m_fMinSupp = 0.000f;
+        m_fMinConf = 0.000f;
         m_iNombreTransactions = m_gestionBD.ObtenirNombreLignes();
         
         m_iNombreItemsQualCond = 0;
@@ -586,7 +586,7 @@ public abstract class EvaluationBaseAlgorithm {
         boolean bPremierePasse = false;
         int iIndiceDimension = 0;
         int iIndiceIntervalle = 0;
-        float fValeurReelle = 0.0f;
+        float fValeurReelle = 0.000f;
         int iIndiceReglePotentielle = 0;
         boolean bNouvelleRegleEstSolide = false;
         int iAncienSupportCumuleRegle = 0;
@@ -977,7 +977,7 @@ public abstract class EvaluationBaseAlgorithm {
         ItemQuantitative itemQuant = null;
         int iIndiceItem = 0;
         int iIndiceItemQuant = 0;
-        float fConfianceRegle = 0.0f;
+        float fConfianceRegle = 0.000f;
         int iIndiceIntervalleReglePotentielle = 0;
         int iIndiceDisjonction = 0;
         
@@ -1037,7 +1037,7 @@ public abstract class EvaluationBaseAlgorithm {
         if (m_meilleureReglePotentielle.m_iSupportCond > 0)
             fConfianceRegle = ((float)m_meilleureReglePotentielle.m_iSupportRegle) / ((float)m_meilleureReglePotentielle.m_iSupportCond);
         else
-            fConfianceRegle = 0.0f;
+            fConfianceRegle = 0.000f;
         m_schemaRegleOptimale.AssignerConfiance(fConfianceRegle);
        
         return m_schemaRegleOptimale;
@@ -1067,16 +1067,16 @@ public abstract class EvaluationBaseAlgorithm {
         if (iSupportCond>0)
             return ((float)iSupportRegle / (float)iSupportCond);
         else
-            return 0.0f;
+            return 0.000f;
     }
     
     
     
     public float CalculerQualiteMoyenne() {
         int iIndiceReglePotentielle = 0;
-        float fCumulQualite = 0.0f;
+        float fCumulQualite = 0.000f;
         
-        fCumulQualite = 0.0f;
+        fCumulQualite = 0.000f;
         for (iIndiceReglePotentielle = 0; iIndiceReglePotentielle < m_iNombreReglesPotentielles; iIndiceReglePotentielle++)
             fCumulQualite += m_tReglesPotentielles[iIndiceReglePotentielle].m_fQualite;
         
@@ -1103,8 +1103,8 @@ public abstract class EvaluationBaseAlgorithm {
         int iIndiceIntervalle = 0;
         int iSupportIntervalle = 0;
         int iSupportMax = 0;
-        float fTauxCouvertureDomaine1 = 0.0f;
-        float fTauxCouvertureDomaine2 = 0.0f;
+        float fTauxCouvertureDomaine1 = 0.000f;
+        float fTauxCouvertureDomaine2 = 0.000f;
         DataColumn colonneDonnees = null;
         
         // 1 �re mesure de qualit� :
@@ -1121,7 +1121,7 @@ public abstract class EvaluationBaseAlgorithm {
         //reglePotentielle.m_fQualite /= (float)m_iNombreTransactions;
         
         
-        if (reglePotentielle.m_fQualite > 0.0f) {
+        if (reglePotentielle.m_fQualite > 0.000f) {
 
             for (iIndiceDimension=0; iIndiceDimension<m_iDimension; iIndiceDimension++) {
 
@@ -1163,7 +1163,7 @@ public abstract class EvaluationBaseAlgorithm {
                     }
 */
 
-                    reglePotentielle.m_fQualite *= (1.0f-fTauxCouvertureDomaine1) * (1.0f-fTauxCouvertureDomaine2);
+                    reglePotentielle.m_fQualite *= (1.000f-fTauxCouvertureDomaine1) * (1.000f-fTauxCouvertureDomaine2);
 
                 }
             }

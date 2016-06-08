@@ -299,7 +299,7 @@ public class ResolutionContext {
 		    int iNombreRegles = 0;
 	        int iIndiceRegle = 0;
 	        int iNombreLignesBD = 0;
-	        float fValeurConfiance = 0.0f;
+	        float fValeurConfiance = 0.000f;
 	        AssociationRule regle = null;
 	        ExcelCSVPrinter csvPrinter = null;
 		    
@@ -974,7 +974,7 @@ public class ResolutionContext {
         int iPartieEntiere = 0;
         int iPartieDecimale = 0;
         
-        fProportion *= 100.0f;
+        fProportion *= 100.000f;
         iPartieEntiere = (int)fProportion;
         
         fProportion -= (float)iPartieEntiere;
@@ -1299,9 +1299,9 @@ public class ResolutionContext {
         int iIndiceAjoutItem = 0;
         String sNomAttribut = null;
         String sNomItem = null;
-        float fSupportMin = 0.0f;
-        float fBorneMin = 0.0f;
-        float fBorneMax = 0.0f;
+        float fSupportMin = 0.000f;
+        float fBorneMin = 0.000f;
+        float fBorneMax = 0.000f;
         
         if (sCheminFichier == null)
             return;
