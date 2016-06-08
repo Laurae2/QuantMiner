@@ -92,7 +92,7 @@ public class PanelQuantitativeRuleParam extends PanelBaseParam {//step 3 rule pa
         setLayout(null);
 
         setPreferredSize(new java.awt.Dimension(570, 237));
-        jTextFieldSupport.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.0f, 100.0f));
+        jTextFieldSupport.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.000f, 100.000f));
         add(jTextFieldSupport);
         jTextFieldSupport.setBounds(190, 20, 100, 19);
 
@@ -104,7 +104,7 @@ public class PanelQuantitativeRuleParam extends PanelBaseParam {//step 3 rule pa
         add(jLabelConfiance);
         jLabelConfiance.setBounds(20, 50, 220, 14); //160-->220
 
-        jTextFieldConfiance.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.0f, 100.0f));
+        jTextFieldConfiance.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.000f, 100.000f));
         add(jTextFieldConfiance);
         jTextFieldConfiance.setBounds(190, 50, 100, 19);
 
@@ -142,7 +142,7 @@ public class PanelQuantitativeRuleParam extends PanelBaseParam {//step 3 rule pa
         add(jLabelSupportSupplementaire);
         jLabelSupportSupplementaire.setBounds(20, 200, 340, 14);
 
-        jTextSupportSupplementaire.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.0f, 100.0f));
+        jTextSupportSupplementaire.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.000f, 100.000f));
         add(jTextSupportSupplementaire);
         jTextSupportSupplementaire.setBounds(400, 200, 100, 19);
 
@@ -221,13 +221,13 @@ public class PanelQuantitativeRuleParam extends PanelBaseParam {//step 3 rule pa
     public boolean EnregistrerParametres() {
         
         StandardParametersQuantitative parametresReglesQuantitatives = null;
-        float fMinSupp = 0.0f;
-        float fMinConf = 0.0f;
+        float fMinSupp = 0.000f;
+        float fMinConf = 0.000f;
         int iNombreMaxAttributsQuant = 0;
         int iNombreMinAttributsQuant = 0;
         int iNombreDisjonctionsGauche = 0;
         int iNombreDisjonctionsDroite = 0;
-        float fMinSuppDisjonctions = 0.0f;
+        float fMinSuppDisjonctions = 0.000f;
         
         
         parametresReglesQuantitatives = m_contexteResolution.m_parametresReglesQuantitatives;
