@@ -34,7 +34,7 @@ public class AttributQuantitative {
             m_fBorneMax = m_colonneDonnees.ObtenirBorneMax();
         }
         else
-            m_fBorneMin = m_fBorneMax = 0.0f;
+            m_fBorneMin = m_fBorneMax = 0.000f;
     }
     
 

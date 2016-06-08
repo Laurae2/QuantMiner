@@ -29,8 +29,8 @@ public class AssociationRule {
     public int m_iNombreItemsDroite = 0;   //number of right items
     
     public int m_iOccurrences = 0; // number de fois o� la r�gle est v�rifi�e (support non relative) 
-    public float m_fSupport = 0.0f;
-    public float m_fConfiance = 0.0f;
+    public float m_fSupport = 0.000f;
+    public float m_fConfiance = 0.000f;
     
     public int m_iOccurrencesGauche = 0;
     public int m_iOccurrencesDroite = 0;
@@ -70,8 +70,8 @@ public class AssociationRule {
         m_iNombreDisjonctionsDroiteValides = m_iNombreDisjonctionsDroite;
             
         m_iOccurrences = 0;
-        m_fSupport = 0.0f;
-        m_fConfiance = 0.0f;
+        m_fSupport = 0.000f;
+        m_fConfiance = 0.000f;
         m_iOccurrencesGauche = 0;
         m_iOccurrencesDroite = 0;
         m_iOccurrences_Gauche_NonDroite = 0;
@@ -138,8 +138,8 @@ public class AssociationRule {
             this.m_tItemsGauche = null;
             this.m_tItemsDroite = null;
             this.m_iOccurrences = 0;
-            this.m_fSupport = 0.0f;
-            this.m_fConfiance = 0.0f;
+            this.m_fSupport = 0.000f;
+            this.m_fConfiance = 0.000f;
             this.m_iOccurrencesGauche = 0;
             this.m_iOccurrencesDroite = 0;
             this.m_iOccurrences_Gauche_NonDroite = 0;
@@ -730,9 +730,9 @@ public class AssociationRule {
         sRegle += "support = ";
         sRegle += String.valueOf(m_iOccurrences);
         sRegle += " (";
-        sRegle += String.valueOf( (int)(100.0f*m_fSupport) );
+        sRegle += String.valueOf( (int)(100.000f*m_fSupport) );
         sRegle += "%) , confidence = ";
-        sRegle += String.valueOf( (int)(100.0f*m_fConfiance) );
+        sRegle += String.valueOf( (int)(100.000f*m_fConfiance) );
         sRegle += " %";
         
         sRegle += "  :  ";
@@ -825,7 +825,7 @@ public class AssociationRule {
         ItemQuantitative itemQuant = null;
         boolean bGaucheCouvert = true;
         boolean bDroiteCouvert = false;
-        float fValeurReelle = 0.0f;
+        float fValeurReelle = 0.000f;
         
         if ( (tRegles==null) || (contexte==null) )
             return;

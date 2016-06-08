@@ -34,7 +34,7 @@ public class AprioriQuantitative {
     private ResolutionContext m_contexteResolution = null;
     
     
-    float m_fMinSupp = 0.0f;
+    float m_fMinSupp = 0.000f;
     int m_iNombreTransactions = 0;
     
     
@@ -52,7 +52,7 @@ public class AprioriQuantitative {
         m_listeAttributsQuant = new ArrayList();
         m_tableItems = new TableItems();
         m_listeListeItemSets = new ArrayList();
-        m_fMinSupp = 0.0f;
+        m_fMinSupp = 0.000f;
         m_iNombreTransactions = 0;
         m_traitementExterne = null;
         
@@ -221,7 +221,7 @@ public class AprioriQuantitative {
                 for (iCompteur=2;iCompteur<=(iNombreItemsRestants-iNombrePlacesRestantes);iCompteur++)
                     factN_P *= iCompteur;
 
-                iCNP = factN / (factP * factN_P);
+                iCNP = (factN / factP) / factN_P;
 
             }
             // Sinon cas iNombreItemsRestants == iNombrePlacesRestantes :

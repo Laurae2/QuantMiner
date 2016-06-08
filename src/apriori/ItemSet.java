@@ -128,7 +128,7 @@ public class ItemSet {
             sTexteItemSet += "  ,  support = ";
             sTexteItemSet += String.valueOf( m_iSupport );
             sTexteItemSet += " (";
-            sTexteItemSet += String.valueOf( (float)(100.0f*((float)m_iSupport / (float)iNombreTransactions)) );
+            sTexteItemSet += String.valueOf( (float)(100.000f*((float)m_iSupport / (float)iNombreTransactions)) );
             sTexteItemSet += "%)";
         }
         

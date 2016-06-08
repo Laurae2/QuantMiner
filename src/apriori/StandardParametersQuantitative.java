@@ -23,17 +23,17 @@ import src.solver.*;
  */
 public class StandardParametersQuantitative {
     
-    public static final float DEFAUT_MINSUPP = 0.10f;
-    public static final float DEFAUT_MINCONF = 0.60f;
-    public static final float DEFAUT_MINSUPP_DISJONCTIONS = 0.0f;   //support threshold for additional intervals 
+    public static final float DEFAUT_MINSUPP = 0.100f;
+    public static final float DEFAUT_MINCONF = 0.600f;
+    public static final float DEFAUT_MINSUPP_DISJONCTIONS = 0.000f;   //support threshold for additional intervals 
     
-    public float m_fMinSupp = 0.0f;
-    public float m_fMinConf = 0.0f;
+    public float m_fMinSupp = 0.000f;
+    public float m_fMinConf = 0.000f;
     public int m_iNombreMinAttributsQuant = 0; //min # of quantitative attributes in a rule
     public int m_iNombreMaxAttributsQuant = 0; //max # of quantitative attributes in a rule
     public int m_iNombreDisjonctionsGauche = 0;  //# of allowed OR in the rule on the right side
     public int m_iNombreDisjonctionsDroite = 0;  //# of allowed OR in the rule on the left side
-    public float m_fMinSuppDisjonctions = 0.0f;  //support threshold for additional intervals 
+    public float m_fMinSuppDisjonctions = 0.000f;  //support threshold for additional intervals 
     
     
     public StandardParametersQuantitative() {

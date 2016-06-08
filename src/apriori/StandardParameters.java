@@ -23,11 +23,11 @@ import src.solver.*;
  */
 public class StandardParameters {
     
-    public static final float DEFAUT_MINSUPP = 0.10f;
-    public static final float DEFAUT_MINCONF = 0.60f;
+    public static final float DEFAUT_MINSUPP = 0.100f;
+    public static final float DEFAUT_MINCONF = 0.600f;
     
-    public float m_fMinSupp = 0.0f;
-    public float m_fMinConf = 0.0f;
+    public float m_fMinSupp = 0.000f;
+    public float m_fMinConf = 0.000f;
 
     
     public StandardParameters() {

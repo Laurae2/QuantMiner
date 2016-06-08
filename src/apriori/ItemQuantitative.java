@@ -73,7 +73,7 @@ public class ItemQuantitative extends Item {
         else {
             tBornes = new float [iNombreDisjonctions*2];
             for (iIndiceBorne=0; iIndiceBorne<iNombreDisjonctions*2; iIndiceBorne++)
-                tBornes[iIndiceBorne] = 0.0f;
+                tBornes[iIndiceBorne] = 0.000f;
             CreerItemQuantitatifMultiIntervalles(attributQuant, tBornes);
         }
     } 
