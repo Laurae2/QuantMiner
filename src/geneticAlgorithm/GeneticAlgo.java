@@ -23,8 +23,8 @@ import src.solver.*;
 
 public class GeneticAlgo extends EvaluationBaseAlgorithm {
     
-    private float m_fTauxCroisement = 0.0f;  //crossover rate
-    private float m_fTauxMutation = 0.0f;    //mutation rate
+    private float m_fTauxCroisement = 0.000f;  //crossover rate
+    private float m_fTauxMutation = 0.000f;    //mutation rate
    
     // Structures de donn�es pour l'optimisation des calculs :
 
@@ -68,8 +68,8 @@ public class GeneticAlgo extends EvaluationBaseAlgorithm {
     public GeneticAlgo(int iNombreIndividus, DatabaseAdmin gestionBD) {
         super(iNombreIndividus, gestionBD);
         
-        m_fTauxCroisement = 0.0f;
-        m_fTauxMutation = 0.0f;
+        m_fTauxCroisement = 0.000f;
+        m_fTauxMutation = 0.000f;
         
         CalculerTableIndicesTirages();
     }
@@ -206,7 +206,7 @@ public class GeneticAlgo extends EvaluationBaseAlgorithm {
                     iIndiceDisjonction = m_iDisjonctionDroiteCourante;
                 }
                 
-                iResultatRoulette = (int)(8.0f * m_tRandomFloat[(int)((m_compteurRandomFloat++)&0xFFFF)]);
+                iResultatRoulette = (int)(8.000f * m_tRandomFloat[(int)((m_compteurRandomFloat++)&0xFFFF)]);
 
                 if (iResultatRoulette == 0)
                     VerifierEtAffecterBornesReglePotentielle(reglePotentielleFille, iIndiceDimension, iIndiceDisjonction,

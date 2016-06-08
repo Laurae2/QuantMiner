@@ -23,13 +23,13 @@ public class ParametersGeneticAlgo {
     
     public static final int DEFAUT_TAILLEPOP = 250;     //population size
     public static final int DEFAUT_NBGEN = 100;         //# of generations
-    public static final float DEFAUT_COEFFCROIS = 0.50f;  //cross-over rate
-    public static final float DEFAUT_COEFMUT = 0.40f;     //mutation rate
+    public static final float DEFAUT_COEFFCROIS = 0.500f;  //cross-over rate
+    public static final float DEFAUT_COEFMUT = 0.400f;     //mutation rate
     
     public int m_iTaillePopulation = 0;
     public int m_iNombreGenerations = 0;
-    public float m_fPourcentageCroisement = 0.0f;
-    public float m_fPourcentageMutation = 0.0f;
+    public float m_fPourcentageCroisement = 0.000f;
+    public float m_fPourcentageMutation = 0.000f;
     
     
     public ParametersGeneticAlgo() {
