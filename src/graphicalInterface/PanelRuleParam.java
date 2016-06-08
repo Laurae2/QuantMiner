@@ -60,7 +60,7 @@ public class PanelRuleParam extends PanelBaseParam { //step 3 rule parameters fo
         setLayout(null);
 
         setPreferredSize(new java.awt.Dimension(300, 90));
-        jTextFieldSupport.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.0f, 100.0f));
+        jTextFieldSupport.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.000f, 100.000f));
         add(jTextFieldSupport);
         jTextFieldSupport.setBounds(160, 20, 100, 20);
 
@@ -72,7 +72,7 @@ public class PanelRuleParam extends PanelBaseParam { //step 3 rule parameters fo
         add(jLabelConfiance);
         jLabelConfiance.setBounds(10, 50, 150, 16);
 
-        jTextFieldConfiance.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.0f, 100.0f));
+        jTextFieldConfiance.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.000f, 100.000f));
         add(jTextFieldConfiance);
         jTextFieldConfiance.setBounds(160, 50, 100, 20);
 
@@ -122,8 +122,8 @@ public class PanelRuleParam extends PanelBaseParam { //step 3 rule parameters fo
     public boolean EnregistrerParametres() {
         
         StandardParameters parametresRegles = null;
-        float fMinSupp = 0.0f;
-        float fMinConf = 0.0f;
+        float fMinSupp = 0.000f;
+        float fMinConf = 0.000f;
         
         parametresRegles = m_contexteResolution.m_parametresRegles;
         if (parametresRegles == null)
@@ -132,7 +132,7 @@ public class PanelRuleParam extends PanelBaseParam { //step 3 rule parameters fo
         // M�morisation des param�tres :
         
         try {
-            fMinSupp = (float) ( Double.parseDouble( jTextFieldSupport.getText() ) / 100.0 );
+            fMinSupp = (float) ( Double.parseDouble( jTextFieldSupport.getText() ) / 100.000 );
             parametresRegles.m_fMinSupp = fMinSupp;
         }
         catch (NumberFormatException e) {
@@ -140,7 +140,7 @@ public class PanelRuleParam extends PanelBaseParam { //step 3 rule parameters fo
         }
  
         try {
-            fMinConf = (float) ( Double.parseDouble( jTextFieldConfiance.getText() ) / 100.0 );
+            fMinConf = (float) ( Double.parseDouble( jTextFieldConfiance.getText() ) / 100.000 );
             parametresRegles.m_fMinConf = fMinConf;
         }
         catch (NumberFormatException e) {

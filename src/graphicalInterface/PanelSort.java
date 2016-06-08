@@ -146,7 +146,7 @@ public class PanelSort extends javax.swing.JPanel { //step 5 the second/middle p
         add(jCheckBoxInteret);
         jCheckBoxInteret.setBounds(6, 34, 440, 20);
 
-        jTextFieldInteret.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.0f, 100.0f));
+        jTextFieldInteret.setInputVerifier(new ToolsInterface.VerifieurTextFieldIntervalleFloat(0.000f, 100.000f));
         add(jTextFieldInteret);
         jTextFieldInteret.setBounds(450, 34, 66, 20);
 
@@ -436,18 +436,18 @@ public class PanelSort extends javax.swing.JPanel { //step 5 the second/middle p
     // Renvoie la valeur du sueil maximum de support du cons�quent sp�cifi� dans le filtrage d'int�r�t des
     // r�gles, ou -1.0f si celui-ci n'est pas d�fini :
     public float ObtenirSueilMaxSupportConsequent() {
-        float fSeuilSupportMax = 0.0f;
+        float fSeuilSupportMax = 0.000f;
         
         if (this.jCheckBoxInteret.isSelected()) {
             try {
-                fSeuilSupportMax = (float) ( Double.parseDouble( jTextFieldInteret.getText() ) / 100.0 );
+                fSeuilSupportMax = (float) ( Double.parseDouble( jTextFieldInteret.getText() ) / 100.000 );
             }
             catch (NumberFormatException e) {
-                fSeuilSupportMax = -1.0f;
+                fSeuilSupportMax = -1.000f;
             }
         }
         else
-            fSeuilSupportMax = -1.0f;
+            fSeuilSupportMax = -1.000f;
         
         return fSeuilSupportMax;
     }

@@ -117,8 +117,8 @@ public class ToolsInterface {
     
     // Classe permettant la correction de la saisie dans un JTextField d'un nombre contraint � un intervalle :
     public static class VerifieurTextFieldIntervalleFloat extends InputVerifier {
-        float m_fValeurMin = 0.0f;
-        float m_fValeurMax = 0.0f;
+        float m_fValeurMin = 0.000f;
+        float m_fValeurMax = 0.000f;
 
         public VerifieurTextFieldIntervalleFloat(float fValeurMin, float fValeurMax) {
             super();
@@ -129,7 +129,7 @@ public class ToolsInterface {
         
         
         public boolean verify(JComponent input) {
-            float fValeur = 0.0f;
+            float fValeur = 0.000f;
 
             
             // V�rification de la valeur de support minimal saisie :

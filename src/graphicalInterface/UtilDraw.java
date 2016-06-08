@@ -53,11 +53,11 @@ public class UtilDraw {
         Rectangle2D contourTexte = null;
         
         if (g2D == null)
-            return 0.0f;
+            return 0.000f;
         
         fontCourante = g2D.getFont();
         if (fontCourante == null)
-            return 0.0f;
+            return 0.000f;
         
         frc = g2D.getFontRenderContext();
         
@@ -82,15 +82,15 @@ public class UtilDraw {
         LineMetrics mesuresFont = null;
         Rectangle2D contourTexte = null;
         String sTextePeint = null;
-        float fLargeur3Points = 0.0f; // Largeur de la cha�ne "..."
-        float fHauteurTexte = 0.0f;
+        float fLargeur3Points = 0.000f; // Largeur de la cha�ne "..."
+        float fHauteurTexte = 0.000f;
         
         if (g2D == null)
-            return 0.0f;
+            return 0.000f;
         
         fontCourante = g2D.getFont();
         if (fontCourante == null)
-            return 0.0f;
+            return 0.000f;
         
         frc = g2D.getFontRenderContext();
         
@@ -108,7 +108,7 @@ public class UtilDraw {
             if (fLargeur3Points >= (float)iLargeurMax)
                 sTexte = "...";
             else {
-                hitInfo = layout.hitTestChar(((float)iLargeurMax) - fLargeur3Points, 0.0f);
+                hitInfo = layout.hitTestChar(((float)iLargeurMax) - fLargeur3Points, 0.000f);
                 sTexte = sTexte.substring(0, hitInfo.getCharIndex()) + "...";
             }
         }
@@ -140,23 +140,23 @@ public class UtilDraw {
     
     
     public static void PeindreAccolade(float fPosX, float fPosMilieuY, float fTaille, boolean bOuvrante, Graphics2D g2D) {
-        float fCoeffSens = 0.0f;
+        float fCoeffSens = 0.000f;
         
         if (bOuvrante)
-            fCoeffSens = 1.0f;
+            fCoeffSens = 1.000f;
         else
-            fCoeffSens = -1.0f;
+            fCoeffSens = -1.000f;
         
         Point2D.Float [] pointAccolade = null;
        
         pointAccolade = new Point2D.Float [7];
        
-        pointAccolade[0] = new Point2D.Float(fPosX + 10.0f*fCoeffSens, fPosMilieuY - fTaille);
-        pointAccolade[1] = new Point2D.Float(fPosX + 5.0f*fCoeffSens, fPosMilieuY - fTaille + 4.0f);
-        pointAccolade[2] = new Point2D.Float(fPosX + 5.0f*fCoeffSens, fPosMilieuY - 4.0f);
+        pointAccolade[0] = new Point2D.Float(fPosX + 10.000f*fCoeffSens, fPosMilieuY - fTaille);
+        pointAccolade[1] = new Point2D.Float(fPosX + 5.000f*fCoeffSens, fPosMilieuY - fTaille + 4.000f);
+        pointAccolade[2] = new Point2D.Float(fPosX + 5.000f*fCoeffSens, fPosMilieuY - 4.000f);
         pointAccolade[3] = new Point2D.Float(fPosX, fPosMilieuY);
-        pointAccolade[4] = new Point2D.Float(pointAccolade[2].x, fPosMilieuY + 5.0f);
-        pointAccolade[5] = new Point2D.Float(pointAccolade[1].x, fPosMilieuY + fTaille - 5.0f);
+        pointAccolade[4] = new Point2D.Float(pointAccolade[2].x, fPosMilieuY + 5.000f);
+        pointAccolade[5] = new Point2D.Float(pointAccolade[1].x, fPosMilieuY + fTaille - 5.000f);
         pointAccolade[6] = new Point2D.Float(pointAccolade[0].x, fPosMilieuY + fTaille);
 
         GeneralPath accolade = new GeneralPath();

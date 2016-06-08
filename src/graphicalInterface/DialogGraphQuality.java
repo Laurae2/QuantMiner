@@ -33,8 +33,8 @@ public class DialogGraphQuality extends javax.swing.JDialog {
         public float [] m_tQualiteMoyenne = null;
         public float [] m_tQualiteMin = null;
         public float [] m_tQualiteMax = null;
-        private float m_fQualiteMax = 0.0f;
-        private float m_fQualiteMin = 0.0f;
+        private float m_fQualiteMax = 0.000f;
+        private float m_fQualiteMin = 0.000f;
         private int m_iPositionYAxeAbscisse = 0;
         private Font m_fontEchelle = null;
         
@@ -48,7 +48,7 @@ public class DialogGraphQuality extends javax.swing.JDialog {
             
             m_fontEchelle = UtilDraw.ChargerFonte("arial.ttf");
             if (m_fontEchelle != null)
-                m_fontEchelle = m_fontEchelle.deriveFont(11.0f);
+                m_fontEchelle = m_fontEchelle.deriveFont(11.000f);
             else
                 m_fontEchelle = new Font("Dialog", Font.BOLD|Font.ITALIC, 10);
             
@@ -80,7 +80,7 @@ public class DialogGraphQuality extends javax.swing.JDialog {
         public void DessinerGraphe() {
             Graphics2D gc = null;
             int iIndicePoint = 0;
-            float fEchelleQualite = 0.0f;
+            float fEchelleQualite = 0.000f;
             
             if ((m_tQualiteMoyenne==null) || (m_tQualiteMax==null) || (m_tQualiteMin==null))
                 return;
@@ -90,7 +90,7 @@ public class DialogGraphQuality extends javax.swing.JDialog {
             // Trac� des composantes communes du dessin :
             gc = m_graphe.createGraphics();
 
-            gc.setStroke( new BasicStroke(2.0f, BasicStroke.CAP_SQUARE, BasicStroke.JOIN_MITER) );
+            gc.setStroke( new BasicStroke(2.000f, BasicStroke.CAP_SQUARE, BasicStroke.JOIN_MITER) );
 
             // Effacement du fond de la fen�tre :
             gc.setColor(Color.WHITE);
@@ -100,17 +100,17 @@ public class DialogGraphQuality extends javax.swing.JDialog {
             gc.setColor(Color.BLACK);
 
            
-            if ((m_fQualiteMax-m_fQualiteMin) == 0.0f)
+            if ((m_fQualiteMax-m_fQualiteMin) == 0.000f)
                 return;
-            else if ( (m_fQualiteMax >= 0.0f) && (m_fQualiteMin >= 0.0f) ) {
+            else if ( (m_fQualiteMax >= 0.000f) && (m_fQualiteMin >= 0.000f) ) {
                 m_iPositionYAxeAbscisse = m_iHauteurGraphe-20;
                 fEchelleQualite = ((float)(m_iHauteurGraphe-40)) / m_fQualiteMax;
             }
-            else if ( (m_fQualiteMax <= 0.0f) && (m_fQualiteMin <= 0.0f) ) {
+            else if ( (m_fQualiteMax <= 0.000f) && (m_fQualiteMin <= 0.000f) ) {
                 m_iPositionYAxeAbscisse = 20;
                 fEchelleQualite = ((float)(m_iHauteurGraphe-40)) / (-m_fQualiteMin);
             }
-            else if ( (m_fQualiteMax * m_fQualiteMin) < 0.0f) { // Signes diff�rents
+            else if ( (m_fQualiteMax * m_fQualiteMin) < 0.000f) { // Signes diff�rents
                 m_iPositionYAxeAbscisse = 20 + (int)( ((float)(m_iHauteurGraphe-40)) * (m_fQualiteMax / (m_fQualiteMax-m_fQualiteMin)) );
                 fEchelleQualite = ((float)(m_iHauteurGraphe-40)) / (m_fQualiteMax-m_fQualiteMin);
             }

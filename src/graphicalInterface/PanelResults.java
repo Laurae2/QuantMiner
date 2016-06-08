@@ -527,7 +527,7 @@ public class PanelResults extends DatabasePanelAssistant { //step 5
         AssociationRule regle = null;
         Comparator comparateur = null;
         boolean bTriDecroissant = false;
-        float fSeuilMaxSupportDroite = 0.0f;
+        float fSeuilMaxSupportDroite = 0.000f;
         int iNombreMaxOccurrencesDroite = 0;
         
         if (super.m_contexteResolution.m_listeRegles == null)
@@ -538,7 +538,7 @@ public class PanelResults extends DatabasePanelAssistant { //step 5
         
         fSeuilMaxSupportDroite = m_panneauTri.ObtenirSueilMaxSupportConsequent();
         iNombreMaxOccurrencesDroite =  super.m_contexteResolution.m_gestionnaireBD.ObtenirNombreLignes();
-        if (fSeuilMaxSupportDroite >= 0.0f)
+        if (fSeuilMaxSupportDroite >= 0.000f)
             iNombreMaxOccurrencesDroite = (int)(((double)iNombreMaxOccurrencesDroite)*((double)fSeuilMaxSupportDroite));
         
             

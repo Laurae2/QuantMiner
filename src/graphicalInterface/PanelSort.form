@@ -140,7 +140,7 @@
     <Component class="javax.swing.JTextField" name="jTextFieldInteret">
       <Properties>
         <Property name="inputVerifier" type="javax.swing.InputVerifier" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new UtilitairesInterface.VerifieurTextFieldIntervalleFloat(0.0f, 100.0f)" type="code"/>
+          <Connection code="new UtilitairesInterface.VerifieurTextFieldIntervalleFloat(0.000f, 100.000f)" type="code"/>
         </Property>
       </Properties>
       <Constraints>
